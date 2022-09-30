@@ -29,6 +29,11 @@ function ShoppingList() {
     setItems(updatedItems);
   }
 
+  function handleDeletedItem(deletedItem){
+    const itemsAfterDeletion = items.filter((item) => item.id !== deletedItem.id);
+    setItems(itemsAfterDeletion);
+  }
+
   function handleCategoryChange(category) {
     setSelectedCategory(category);
   }
@@ -48,7 +53,7 @@ function ShoppingList() {
       />
       <ul className="Items">
         {itemsToDisplay.map((item) => (
-          <Item key={item.id} item={item} onUpdateItem={handleUpdateItem}/>
+          <Item key={item.id} item={item} onUpdateItem={handleUpdateItem} onDeleteItems={handleDeletedItem}/>
         ))}
       </ul>
     </div>

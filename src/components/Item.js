@@ -21,7 +21,7 @@ function Item({ item, onUpdateItem, onDeleteItems }) {
       method: "DELETE",
     })
     .then ((resp) => resp.json())
-    .then((item)=> onDeleteItems(item))
+    .then(()=> onDeleteItems(item))
 
   }
 
